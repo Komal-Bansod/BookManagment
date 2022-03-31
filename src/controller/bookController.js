@@ -32,16 +32,7 @@ const createBook = async function (req, res) {
             releasedAt
         } = data
 
-        let token = req.headers["x-auth-token"]
-                if (!token) {
-                    return res.status(400).send({ status: false, msg: "token Must Be Present , You Have To Login First" })
-                }
-        
-                let decodeToken = jwt.verify(token, "Group4")
-                if (!decodeToken) {
-                    return res.status(401).send({ status: false, msg: "Invalid Token" })
-                }
-        
+       
         
 
         let isValidUser = await userModel.findById(userId)
