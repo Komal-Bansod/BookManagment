@@ -10,8 +10,8 @@ router.post("/register" , UserController.createUserData)
 router.post("/login", UserController.loginUser)
  
 router.post("/books", BookController.createBook)
-router.get("/books", authenticate1.authenticate, BookController.getBook)
-router.get("/books/:bookId",authenticate1.authenticate, BookController.getBookById)
+router.get("/books",BookController.getBook)
+router.get("/books/:bookId", BookController.getBookById)
 router.put("/PUT/books/:bookId", authenticate1.authenticate,BookController.updateBooks)
 router.delete("/books/:bookId", authenticate1.authenticate,BookController.deleteById)
  
